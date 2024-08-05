@@ -1,0 +1,102 @@
+<!-- <html>
+<body>
+    <div class="login">
+       <h1>FWI Prediction</h1>
+
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+         <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
+           <input type="text" name="RH" placeholder="RH" required="required" /><br>
+           <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
+           <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
+           <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
+           <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
+           <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
+           <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
+           <input type="text" name="Region" placeholder="Region" required="required" /><br>
+   
+   
+   
+           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       </form>
+    <h2>
+       THE FWI prediction is {{result}}
+    </h2>
+   <body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .login {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .login input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .login button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Fire Weather Index (FWI) Prediction</h1>
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+            <input type="text" name="Temperature" placeholder="Temperature" required="required" />
+            <input type="text" name="RH" placeholder="Relative Humidity (RH)" required="required" />
+            <input type="text" name="Ws" placeholder="Wind Speed (Ws)" required="required" />
+            <input type="text" name="Rain" placeholder="Rain" required="required" />
+            <input type="text" name="FFMC" placeholder="Fine Fuel Moisture Code (FFMC)" required="required" />
+            <input type="text" name="DMC" placeholder="Duff Moisture Code (DMC)" required="required" />
+            <input type="text" name="DC" placeholder="Drought Code (DC)" required="required" />
+            <input type="text" name="ISI" placeholder="Initial Spread Index (ISI)" required="required" />
+            <input type = "text" name = "BUI" placeholder = "BUI (Buildup Index)" required = "required">
+            <input type="text" name="Classes" placeholder="Class (fire or not fire)" required="required" />
+            <input type="text" name="Region" placeholder="Region (Bejaia or Sidi-Bel Abbes)" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        <div class="result">
+            <h2>The FWI prediction is: {{result}}</h2>
+        </div>
+    </div>
+</body>
+</html>
