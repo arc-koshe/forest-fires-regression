@@ -8,9 +8,6 @@ This project predicts the Fire Weather Index (FWI) based on various meteorologic
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Model Details](#model-details)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Acknowledgements](#acknowledgements)
 
 ## Overview
 
